@@ -29,7 +29,7 @@ pnpm dev
 ### Type-Check, Compile and Minify for Production
 
 ```sh
-pnpm build
+pnpm b uild
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
@@ -37,3 +37,6 @@ pnpm build
 ```sh
 pnpm lint
 ```
+![img_1.png](public/img_1.png)
+
+![img_2.png](public/img_2.png)

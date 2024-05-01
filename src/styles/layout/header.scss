@@ -1,0 +1,11 @@
+.menu-item {
+  @apply cursor-pointer text-[1rem];
+  background: linear-gradient(to right, #2080f0, #2080f0) no-repeat right bottom;
+  transition: background-size 0.3s ease;
+  background-size: 0 2px;
+
+  &:hover {
+    background: linear-gradient(to right, #2080f0, #2080f0) no-repeat left bottom;
+    background-size: 100% 2px;
+  }
+}

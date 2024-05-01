@@ -1,8 +1,9 @@
 import {fileURLToPath, URL} from 'node:url'
-// import tailwindcss from 'tailwindcss'
-// import autoprefixer from 'autoprefixer'
 import {defineConfig, loadEnv} from 'vite'
 import vue from '@vitejs/plugin-vue'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import {ElementPlusResolver} from 'unplugin-vue-components/resolvers'
 
 export default defineConfig(({mode}) => {
     const env = loadEnv(mode, process.cwd(), "")
@@ -11,20 +12,18 @@ export default defineConfig(({mode}) => {
         base: VITE_APP_ENV === 'production' ? '/' : '/',
         plugins: [
             vue(),
+            AutoImport({
+                resolvers: [ElementPlusResolver()],
+            }),
+            Components({
+                resolvers: [ElementPlusResolver()],
+            }),
         ],
         resolve: {
             alias: {
                 '@': fileURLToPath(new URL('./src', import.meta.url))
             }
         },
-        // css: {
-        //     postcss: {
-        //         plugins: [
-        //             tailwindcss,
-        //             autoprefixer
-        //         ]
-        //     }
-        // },
         // vite 相关配置
         server: {
             port: 81,

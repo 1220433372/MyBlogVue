@@ -1,17 +1,9 @@
 <script setup lang="ts">
-import {useAppStore} from "@/stores/app";
+import {useSettingStore} from "@/stores/setting";
 
-const appStore = useAppStore()
-
+const appStore = useSettingStore()
 </script>
 
 <template>
-  <div id="app">
-    <n-config-provider :theme="appStore.theme" :locale="appStore.locale"
-                       :date-locale="appStore.dateLocale">
-      <!--将样式加到body -->
-      <n-global-style/>
-      <RouterView/>
-    </n-config-provider>
-  </div>
+  <RouterView/>
 </template>
